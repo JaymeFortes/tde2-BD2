@@ -1,0 +1,83 @@
+{
+  "id": 1,
+  "nome": "Maria Silva",
+  "data_cadastro": "2024-01-15",
+  "tipo": "Física",
+  "enderecos": [
+    {
+      "rua": "Rua das Flores",
+      "numero": 123,
+      "complemento": "Apto 45",
+      "cep": "12345-678",
+      "cidade": {
+        "nome": "São Paulo",
+        "uf": {
+          "sigla": "SP",
+          "nome": "São Paulo",
+          "regiao": "Sudeste"
+        }
+      }
+    }
+  ],
+  "telefones": [
+    {
+      "ddd": "11",
+      "numero": "987654321"
+    }
+  ],
+  "pessoa_fisica": {
+    "cpf": "12345678900",
+    "genero": "Feminino",
+    "data_nascimento": "1990-05-20"
+  },
+  "cod_empresa": 1001
+}
+
+{
+  "id": 10,
+  "nome": "Livro de MongoDB",
+  "data_lancamento": "2023-06-01",
+  "importado": "Não",
+  "preco": 150.00,
+  "prazo_entrega": 7,
+  "categoria": {
+    "id": 1,
+    "nome": "Tecnologia",
+    "cod_categoria": 101
+  }
+}
+
+{
+  "id": 5001,
+  "data_emissao": "2024-05-25",
+  "cod_cliente": 1,
+  "num_entrega": 3001,
+  "itens": [
+    {
+      "quantidade": 2,
+      "valor_unitario": 150.00,
+      "cod_produto": 10,
+      "entrega": {
+        "num_pedido": 5001,
+        "num_entrega": 3001,
+        "data": "2024-05-26",
+        "placa": "ABC-1234",
+        "mot_cnh": "12345678900",
+        "mot_nome": "João Souza"
+      }
+    },
+    {
+      "quantidade": 1,
+      "valor_unitario": 200.00,
+      "cod_produto": 11,
+      "entrega": {
+        "num_pedido": 5001,
+        "num_entrega": 3002,
+        "data": "2024-05-27",
+        "placa": "XYZ-5678",
+        "mot_cnh": "98765432100",
+        "mot_nome": "Carlos Mendes"
+      }
+    }
+  ]
+}
