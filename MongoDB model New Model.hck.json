@@ -12,6 +12,7 @@
           "type": "objectId",
           "GUID": "6efb36f6-4bb6-4cb4-8c1e-1c2fdb1c6d80",
           "required": true,
+          "primaryKey": true,
           "error": {}
         },
         {
@@ -275,6 +276,14 @@
               "GUID": "805e36d8-c06a-4f46-b5c7-e5181b205342",
               "required": true,
               "error": {}
+            },
+            {
+              "name": "cod_empresa",
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "numeric",
+              "error": {},
+              "GUID": "f5cda2f1-d8cc-4625-bdcc-85f1d6f5e4ea"
             }
           ],
           "additionalProperties": false,
@@ -313,6 +322,7 @@
           "type": "objectId",
           "GUID": "6ee8697a-129f-4398-9c29-82153b59c0b3",
           "required": true,
+          "primaryKey": true,
           "error": {}
         },
         {
@@ -355,27 +365,44 @@
                   "error": {}
                 },
                 {
+                  "name": "cod_produto",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "numeric",
+                  "GUID": "ffc1c96b-cf1a-411a-b049-a87c83bfb029",
+                  "required": true,
+                  "error": {}
+                },
+                {
                   "name": "entrega",
                   "hackoladeMeta": {},
                   "isActivated": true,
                   "type": "document",
                   "properties": [
                     {
+                      "name": "num_pedido",
+                      "hackoladeMeta": {},
+                      "isActivated": true,
+                      "type": "numeric",
+                      "error": {},
+                      "GUID": "aecd3b4e-08b5-41e4-9730-2c7bc2a9f2a8"
+                    },
+                    {
                       "name": "data",
                       "hackoladeMeta": {},
                       "isActivated": true,
                       "type": "date",
                       "primaryKey": false,
-                      "GUID": "cb1ec12b-b999-4542-afbe-847ee8c44b4e",
+                      "GUID": "7ad51cb6-ea15-497d-b112-5bf28364a57d",
                       "required": true,
                       "error": {}
                     },
                     {
-                      "name": "placa",
                       "hackoladeMeta": {},
                       "isActivated": true,
                       "type": "string",
-                      "GUID": "1793054b-2d6a-4e26-9fe8-3b24967f65a4",
+                      "GUID": "cd751ad4-b102-4752-8116-96e852a1ca5c",
+                      "name": "placa",
                       "required": true,
                       "error": {}
                     },
@@ -384,24 +411,23 @@
                       "hackoladeMeta": {},
                       "isActivated": true,
                       "type": "numeric",
-                      "GUID": "909b05b9-50f4-4fd0-ad1a-292391d5ec17",
+                      "GUID": "368789fc-3061-4aa0-9776-9703bc30251c",
                       "required": true,
                       "error": {}
                     },
                     {
-                      "name": "mot_nome",
                       "hackoladeMeta": {},
                       "isActivated": true,
                       "type": "string",
-                      "GUID": "0811c686-b7b7-4766-a68d-76afa7e45ae3",
+                      "GUID": "5afd8181-171c-45ba-94d9-db958d8fed5b",
+                      "name": "mot_nome",
                       "required": true,
                       "error": {}
                     }
                   ],
                   "additionalProperties": false,
-                  "GUID": "6ad6186f-7b70-401e-aa88-8dbf0d68b228",
-                  "required": true,
-                  "error": {}
+                  "error": {},
+                  "GUID": "e4b2fcaf-1ff9-47ac-abc3-21d95e70d184"
                 }
               ],
               "additionalProperties": false,
@@ -413,6 +439,24 @@
           ],
           "additionalItems": true,
           "GUID": "37cdc126-e8cb-48b5-ab42-92ce798aed78",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "cod_cliente",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "numeric",
+          "GUID": "281db76b-3a5a-42c0-b60d-cf78be40c2f5",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "num_entrega",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "numeric",
+          "GUID": "26f0eba5-8a09-4bcc-8abc-170fa77a132b",
           "required": true,
           "error": {}
         }
@@ -448,6 +492,7 @@
           "type": "objectId",
           "GUID": "8d0ddd8d-3ec4-4a75-93dd-317a400c7486",
           "required": true,
+          "primaryKey": true,
           "error": {}
         },
         {
@@ -504,9 +549,36 @@
           "hackoladeMeta": {},
           "isActivated": true,
           "type": "document",
-          "properties": [],
+          "properties": [
+            {
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "string",
+              "GUID": "5f0087b8-1067-407a-b655-c969bf7d9674",
+              "name": "nome",
+              "required": true,
+              "error": {}
+            },
+            {
+              "name": "id",
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "numeric",
+              "error": {},
+              "GUID": "52533d9d-ee17-4c4f-80a4-8cfe252391ca"
+            }
+          ],
           "additionalProperties": false,
           "GUID": "0c7f5c4a-47d2-4564-9959-379186f297ed",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "cod_categoria",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "numeric",
+          "GUID": "4e4a85a8-db70-4917-996a-650945ce80c9",
           "required": true,
           "error": {}
         }
@@ -591,11 +663,6 @@
     "37cdc126-e8cb-48b5-ab42-92ce798aed78": "itens",
     "74681254-a56f-4257-badc-b17cfc71727e": "quantidade",
     "5a7026fb-80c5-4680-ad4b-78d441c6eade": "valor_unitario",
-    "6ad6186f-7b70-401e-aa88-8dbf0d68b228": "entrega",
-    "cb1ec12b-b999-4542-afbe-847ee8c44b4e": "data",
-    "1793054b-2d6a-4e26-9fe8-3b24967f65a4": "placa",
-    "909b05b9-50f4-4fd0-ad1a-292391d5ec17": "mot_cnh",
-    "0811c686-b7b7-4766-a68d-76afa7e45ae3": "mot_nome",
     "53699315-bf31-41d9-9a00-57eaa3261548": "importado",
     "966a7e0c-634b-4575-b896-c714e4007701": "preco",
     "8f91715a-e79a-449c-b9c5-411e874c0467": "prazo_entrega",
@@ -603,7 +670,21 @@
     "e09eca85-f42c-49f9-b3c8-55a494d9206f": "estado",
     "13592409-fd26-4a49-9c5f-2bd8e9e0b9de": "uf",
     "3d33c885-c5b5-4434-b3b4-84cbab2b13d9": "nome",
-    "a57775cf-0f39-410b-a9e6-81f5d4fc1e2b": "regiao"
+    "a57775cf-0f39-410b-a9e6-81f5d4fc1e2b": "regiao",
+    "6978838b-ab7d-4c1e-9c9a-af388087459c": "",
+    "f5cda2f1-d8cc-4625-bdcc-85f1d6f5e4ea": "cod_empresa",
+    "5f0087b8-1067-407a-b655-c969bf7d9674": "nome",
+    "52533d9d-ee17-4c4f-80a4-8cfe252391ca": "id",
+    "ffc1c96b-cf1a-411a-b049-a87c83bfb029": "cod_produto",
+    "e4b2fcaf-1ff9-47ac-abc3-21d95e70d184": "entrega",
+    "aecd3b4e-08b5-41e4-9730-2c7bc2a9f2a8": "num_pedido",
+    "7ad51cb6-ea15-497d-b112-5bf28364a57d": "data",
+    "cd751ad4-b102-4752-8116-96e852a1ca5c": "placa",
+    "368789fc-3061-4aa0-9776-9703bc30251c": "mot_cnh",
+    "5afd8181-171c-45ba-94d9-db958d8fed5b": "mot_nome",
+    "281db76b-3a5a-42c0-b60d-cf78be40c2f5": "cod_cliente",
+    "26f0eba5-8a09-4bcc-8abc-170fa77a132b": "num_entrega",
+    "4e4a85a8-db70-4917-996a-650945ce80c9": "cod_categoria"
   },
   "definitions": {
     "type": "definitions",
@@ -628,7 +709,7 @@
   "creationTS": "2025-05-14T15:21:34.832Z",
   "GUID": "daa9a49b-6281-4ca3-970c-07862e7b046f",
   "isLineageEnabled": false,
-  "lastModifTS": "2025-05-14T17:00:43.251Z",
+  "lastModifTS": "2025-05-25T17:39:35.532Z",
   "persistenceSchemaVersion": "8",
   "isCreatedByPlugin": true,
   "pluginInformation": {
@@ -637,32 +718,33 @@
   "applicationInformation": {
     "version": "8.1.6"
   },
+  "hackoladeMeta": {},
   "settings": {
     "centralPane": {
       "dbLevel": {
         "erd": [
           {
             "GUID": "d39505b9-460c-42c5-8060-29a8b3000fe6",
-            "x": 813,
-            "y": 931,
+            "x": 826,
+            "y": 791,
             "width": 268,
-            "height": 537,
+            "height": 555,
             "color": {}
           },
           {
             "GUID": "4a0118b9-e6bd-414b-bada-0994359e93e2",
-            "x": 1122,
-            "y": 935,
-            "width": 273,
-            "height": 231,
+            "x": 1248,
+            "y": 794,
+            "width": 283,
+            "height": 303,
             "color": {}
           },
           {
             "GUID": "f32913c8-002e-4c07-b053-886cb1329955",
-            "x": 1110,
-            "y": 1203,
+            "x": 1249,
+            "y": 1135,
             "width": 249,
-            "height": 159,
+            "height": 213,
             "color": {}
           }
         ],
@@ -674,8 +756,8 @@
         },
         "buckets": [
           {
-            "x": 773,
-            "y": 891,
+            "x": 786,
+            "y": 751,
             "GUID": "045eb09c-f3f6-42e7-afc3-1a6314510a9c"
           }
         ],

@@ -1,0 +1,71 @@
+📊 Comparação com o Modelo Relacional:
+🔵 Clientes:
+
+    Relacional: Tabelas clientes, enderecos, telefones, pessoa_fisica, pessoa_juridica.
+
+    NoSQL: Um único documento clientes que incorpora:
+
+        Endereços (array de documentos),
+
+        Telefones (array de documentos),
+
+        Dados de pessoa física/jurídica embutidos (campos cpf, cnpj, razao_social, etc.).
+
+✅ Correto e adequado: Isso reduz a necessidade de joins e facilita consultas de clientes com seus endereços e telefones.
+🔵 Produtos:
+
+    Relacional: Tabelas produtos e categorias.
+
+    NoSQL: Uma coleção produtos que incorpora o documento categoria.
+
+✅ Boa escolha: A categoria do produto é algo inerente ao produto, e o acoplamento é bom aqui.
+Se você tiver muitas categorias reutilizadas e quiser flexibilidade, poderia considerar separar categorias em uma coleção própria (mas assim como está, está simples e funcional).
+🔵 Pedidos:
+
+    Relacional: pedidos, itens_pedido, entrega.
+
+    NoSQL: Um documento pedidos com:
+
+        Array itens: cada item tem quantidade, valor_unitario, cod_produto e entrega embutida.
+
+        A entrega tem num_pedido, data, placa, mot_cnh, mot_nome.
+
+        Campos extras no pedido: cod_cliente e num_entrega no nível do pedido.
+
+✅ Muito bom:
+
+    Itens como array dentro de pedidos: ✔️ (representa bem a ideia de que um pedido tem vários itens).
+
+    Entrega como subdocumento de item: Faz sentido se a entrega for específica de cada item (por exemplo, pedidos podem ter itens com entregas diferentes).
+    Se a entrega fosse para o pedido todo, você poderia colocar o entrega diretamente no nível do pedido, mas assim também está válido dependendo do seu cenário.
+
+🔵 Campos num_entrega e num_pedido:
+
+✅ A inclusão de num_entrega dentro de entrega e também no nível do pedido pode ser redundante, mas:
+
+    Se cada entrega pode ter um número único global, ok manter num_entrega.
+
+    Se cada entrega está associada a um único pedido, num_pedido dentro da entrega pode ser dispensável, já que o id do pedido já está no nível superior.
+
+✅ Se for apenas para facilitar buscas, manter os dois pode ser prático.
+📌 Considerações finais:
+
+✅ Modelo está bom!
+✅ Estrutura desnormalizada correta para o NoSQL:
+
+    Você incorporou os detalhes relacionados diretamente ao documento pai (endereços em clientes, itens e entrega em pedidos).
+    ✅ Está otimizando leitura (menos joins necessários, menos consultas).
+
+🔧 Ajustes opcionais (não obrigatórios):
+
+    Se quiser evitar redundância, pode:
+
+        Remover num_pedido de dentro da entrega (ele já está implícito).
+
+        Avaliar se num_entrega é necessário no nível do pedido ou apenas na entrega.
+
+    Se quiser maior normalização (menos acoplamento), poderia:
+
+        Separar categorias em uma coleção própria (mas, no seu caso, está bem acoplado).
+
+        Separar entrega em uma coleção própria se precisar de consultas independentes de entrega.
